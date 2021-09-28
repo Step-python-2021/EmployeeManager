@@ -1,0 +1,49 @@
+{% extends 'base/master.html' %}
+
+{% block title %}Регистация{% endblock %}
+
+{% block content %}
+<div class="main-box">
+    <h2>Add new employee</h2>
+    <form action="/home/index" method="post">
+        <p>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" class="inp" required>
+        </p>
+        <p>
+            <label for="surname">Surname:</label><br>
+            <input type="text" id="surname" name="surname" class="inp" required>
+        </p>
+        <p style="text-align: center; margin-top: 25px">
+            <input type="submit" value="Submit" class="btn btn-success my-btn">
+            <input type="reset" value="Clear" class="btn btn-danger my-btn">
+        </p>
+        <p>
+            <label for="photo">Photo:</label><br>
+            <input type="file" id="photo" name="photo" class="inp" required>
+        </p>
+
+    </form>
+</div>
+<style>
+    form {
+        border: 1px solid silver;
+        width: 400px;
+        margin: 20px auto;
+        border-radius: 15px;
+        padding: 15px 30px;
+        background-color: whitesmoke;
+        color: grey;
+        text-align: left;
+    }
+    .inp {
+        width: 99%;
+        padding: 4px;
+    }
+    .my-btn {
+        width: 120px;
+        padding: 3px;
+        border-radius: 10px;
+    }
+</style>
+{% endblock %}
