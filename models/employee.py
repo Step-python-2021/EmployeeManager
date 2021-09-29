@@ -1,5 +1,6 @@
 from config import mysql
 
+
 class Employee(object):
 
     @staticmethod
@@ -8,7 +9,7 @@ class Employee(object):
         cursor = mysql.get_db().cursor()
         sql_query = """
             insert into employees (name, surname, photo)
-            values (%s, %s, %)
+            values (%s, %s, %s)
         """
         cursor.execute(sql_query, (name, surname, photo))
         connection.commit()

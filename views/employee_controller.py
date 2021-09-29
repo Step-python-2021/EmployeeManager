@@ -15,11 +15,10 @@ class EmployeeController(object):
         elif request.method == 'POST':
             name = request.form.get('name')
             surname = request.form.get('surname')
-            file = request.files.get('image')
-            filename = secure_filename(file.name)
+            file = request.files.get('photo')
+            filename = secure_filename(file.filename)
             extensions = ['png', 'jpg', 'jpeg', 'gif', 'bmp']
             size_limit = 10 * 1024 * 1024  # 10Mb
-
             if filename.split('.')[-1] not in extensions:
                 message = 'Wrong file format!'
                 mess_color = 'red'
@@ -44,5 +43,5 @@ class EmployeeController(object):
                 'message': message,
                 'mess_color': mess_color
             })
-        else:
-            return render_template('access/page403.html')
+        # else:
+        #     return render_template('access/page403.html')
